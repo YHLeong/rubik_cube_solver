@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubik's Cube Solver 3x3x3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Rubik's Cube Solver 3x3x3</h1>
+            <p class="subtitle">Click squares to color them, then solve your cube!</p>
+        </header>
+
+        <main>
+            <div class="main-content">
+                <!-- Cube Display Section -->
+                <div class="cube-section">
+                    <h2>Configure Your Cube</h2>
+                    <div class="cube-container">
+                        <!-- Up Face -->
+                        <div class="cube-row top-row">
+                            <div class="spacer"></div>
+                            <div class="face up-face" data-face="U">
+                                <div class="face-label">Up</div>
+                                <div class="face-grid">
+                                    <div class="square" data-face="U" data-row="0" data-col="0"></div>
+                                    <div class="square" data-face="U" data-row="0" data-col="1"></div>
+                                    <div class="square" data-face="U" data-row="0" data-col="2"></div>
+                                    <div class="square" data-face="U" data-row="1" data-col="0"></div>
+                                    <div class="square" data-face="U" data-row="1" data-col="1"></div>
+                                    <div class="square" data-face="U" data-row="1" data-col="2"></div>
+                                    <div class="square" data-face="U" data-row="2" data-col="0"></div>
+                                    <div class="square" data-face="U" data-row="2" data-col="1"></div>
+                                    <div class="square" data-face="U" data-row="2" data-col="2"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Middle Row -->
+                        <div class="cube-row middle-row">
+                            <!-- Left Face -->
+                            <div class="face left-face" data-face="L">
+                                <div class="face-label">Left</div>
+                                <div class="face-grid">
+                                    <div class="square" data-face="L" data-row="0" data-col="0"></div>
+                                    <div class="square" data-face="L" data-row="0" data-col="1"></div>
+                                    <div class="square" data-face="L" data-row="0" data-col="2"></div>
+                                    <div class="square" data-face="L" data-row="1" data-col="0"></div>
+                                    <div class="square" data-face="L" data-row="1" data-col="1"></div>
+                                    <div class="square" data-face="L" data-row="1" data-col="2"></div>
+                                    <div class="square" data-face="L" data-row="2" data-col="0"></div>
+                                    <div class="square" data-face="L" data-row="2" data-col="1"></div>
+                                    <div class="square" data-face="L" data-row="2" data-col="2"></div>
+                                </div>
+                            </div>
+
+                            <!-- Front Face -->
+                            <div class="face front-face" data-face="F">
+                                <div class="face-label">Front</div>
+                                <div class="face-grid">
+                                    <div class="square" data-face="F" data-row="0" data-col="0"></div>
+                                    <div class="square" data-face="F" data-row="0" data-col="1"></div>
+                                    <div class="square" data-face="F" data-row="0" data-col="2"></div>
+                                    <div class="square" data-face="F" data-row="1" data-col="0"></div>
+                                    <div class="square" data-face="F" data-row="1" data-col="1"></div>
+                                    <div class="square" data-face="F" data-row="1" data-col="2"></div>
+                                    <div class="square" data-face="F" data-row="2" data-col="0"></div>
+                                    <div class="square" data-face="F" data-row="2" data-col="1"></div>
+                                    <div class="square" data-face="F" data-row="2" data-col="2"></div>
+                                </div>
+                            </div>
+
+                            <!-- Right Face -->
+                            <div class="face right-face" data-face="R">
+                                <div class="face-label">Right</div>
+                                <div class="face-grid">
+                                    <div class="square" data-face="R" data-row="0" data-col="0"></div>
+                                    <div class="square" data-face="R" data-row="0" data-col="1"></div>
+                                    <div class="square" data-face="R" data-row="0" data-col="2"></div>
+                                    <div class="square" data-face="R" data-row="1" data-col="0"></div>
+                                    <div class="square" data-face="R" data-row="1" data-col="1"></div>
+                                    <div class="square" data-face="R" data-row="1" data-col="2"></div>
+                                    <div class="square" data-face="R" data-row="2" data-col="0"></div>
+                                    <div class="square" data-face="R" data-row="2" data-col="1"></div>
+                                    <div class="square" data-face="R" data-row="2" data-col="2"></div>
+                                </div>
+                            </div>
+
+                            <!-- Back Face -->
+                            <div class="face back-face" data-face="B">
+                                <div class="face-label">Back</div>
+                                <div class="face-grid">
+                                    <div class="square" data-face="B" data-row="0" data-col="0"></div>
+                                    <div class="square" data-face="B" data-row="0" data-col="1"></div>
+                                    <div class="square" data-face="B" data-row="0" data-col="2"></div>
+                                    <div class="square" data-face="B" data-row="1" data-col="0"></div>
+                                    <div class="square" data-face="B" data-row="1" data-col="1"></div>
+                                    <div class="square" data-face="B" data-row="1" data-col="2"></div>
+                                    <div class="square" data-face="B" data-row="2" data-col="0"></div>
+                                    <div class="square" data-face="B" data-row="2" data-col="1"></div>
+                                    <div class="square" data-face="B" data-row="2" data-col="2"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Row -->
+                        <div class="cube-row bottom-row">
+                            <div class="spacer"></div>
+                            <div class="face down-face" data-face="D">
+                                <div class="face-label">Down</div>
+                                <div class="face-grid">
+                                    <div class="square" data-face="D" data-row="0" data-col="0"></div>
+                                    <div class="square" data-face="D" data-row="0" data-col="1"></div>
+                                    <div class="square" data-face="D" data-row="0" data-col="2"></div>
+                                    <div class="square" data-face="D" data-row="1" data-col="0"></div>
+                                    <div class="square" data-face="D" data-row="1" data-col="1"></div>
+                                    <div class="square" data-face="D" data-row="1" data-col="2"></div>
+                                    <div class="square" data-face="D" data-row="2" data-col="0"></div>
+                                    <div class="square" data-face="D" data-row="2" data-col="1"></div>
+                                    <div class="square" data-face="D" data-row="2" data-col="2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls Section -->
+                <div class="controls-section">
+                    <!-- Color Palette -->
+                    <div class="color-palette">
+                        <h3>Color Palette</h3>
+                        <div class="palette-grid">
+                            <button class="color-btn active" data-color="white" style="background-color: #ffffff;">White</button>
+                            <button class="color-btn" data-color="yellow" style="background-color: #ffff00;">Yellow</button>
+                            <button class="color-btn" data-color="red" style="background-color: #ff0000;">Red</button>
+                            <button class="color-btn" data-color="orange" style="background-color: #ffa500;">Orange</button>
+                            <button class="color-btn" data-color="blue" style="background-color: #0000ff;">Blue</button>
+                            <button class="color-btn" data-color="green" style="background-color: #00ff00;">Green</button>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="actions">
+                        <h3>Actions</h3>
+                        <button id="reset-btn" class="action-btn reset">Reset Cube</button>
+                        <button id="solve-btn" class="action-btn solve">Solve Cube</button>
+                        <button id="scramble-btn" class="action-btn scramble">Scramble</button>
+                    </div>
+
+                    <!-- Cube Status -->
+                    <div class="cube-status">
+                        <h3>Cube Status</h3>
+                        <div id="status-display">
+                            <p>Colored squares: <span id="colored-count">0</span>/54</p>
+                            <div id="color-counts"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solution Section -->
+            <div class="solution-section">
+                <h2>Solution</h2>
+                <div class="solution-container">
+                    <div class="solution-display">
+                        <div id="solution-text">
+                            Configure your cube and click "Solve Cube" to get the solution.
+                        </div>
+                    </div>
+                    
+                    <div class="solution-controls">
+                        <button id="prev-step" class="step-btn" disabled>← Previous</button>
+                        <span id="step-info">Ready to solve</span>
+                        <button id="next-step" class="step-btn" disabled>Next →</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Instructions -->
+        <aside class="instructions">
+            <h3>How to Use</h3>
+            <ol>
+                <li>Select a color from the palette</li>
+                <li>Click on cube squares to paint them</li>
+                <li>Color all 54 squares (9 of each color)</li>
+                <li>Click "Solve Cube" to get step-by-step solution</li>
+                <li>Use "Previous" and "Next" to navigate solution steps</li>
+            </ol>
+            
+            <h4>Cube Notation</h4>
+            <ul>
+                <li><strong>F</strong> = Front, <strong>B</strong> = Back</li>
+                <li><strong>R</strong> = Right, <strong>L</strong> = Left</li>
+                <li><strong>U</strong> = Up, <strong>D</strong> = Down</li>
+                <li><strong>'</strong> = Counter-clockwise (e.g., R')</li>
+                <li><strong>2</strong> = 180° turn (e.g., F2)</li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Rubik's Cube Solver | Powered by Kociemba Algorithm</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

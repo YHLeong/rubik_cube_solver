@@ -15,6 +15,96 @@
 
         <main>
             <div class="main-content">
+                <!-- 3D Cube Animation Section -->
+                <div class="cube-3d-section">
+                    <h2>3D Cube Animation</h2>
+                    <div class="cube-3d-container">
+                        <div class="cube-3d" id="cube-3d">
+                            <!-- Front face -->
+                            <div class="cube-face front" data-face="F">
+                                <div class="cube-square" data-pos="0"></div>
+                                <div class="cube-square" data-pos="1"></div>
+                                <div class="cube-square" data-pos="2"></div>
+                                <div class="cube-square" data-pos="3"></div>
+                                <div class="cube-square" data-pos="4"></div>
+                                <div class="cube-square" data-pos="5"></div>
+                                <div class="cube-square" data-pos="6"></div>
+                                <div class="cube-square" data-pos="7"></div>
+                                <div class="cube-square" data-pos="8"></div>
+                            </div>
+                            <!-- Back face -->
+                            <div class="cube-face back" data-face="B">
+                                <div class="cube-square" data-pos="0"></div>
+                                <div class="cube-square" data-pos="1"></div>
+                                <div class="cube-square" data-pos="2"></div>
+                                <div class="cube-square" data-pos="3"></div>
+                                <div class="cube-square" data-pos="4"></div>
+                                <div class="cube-square" data-pos="5"></div>
+                                <div class="cube-square" data-pos="6"></div>
+                                <div class="cube-square" data-pos="7"></div>
+                                <div class="cube-square" data-pos="8"></div>
+                            </div>
+                            <!-- Right face -->
+                            <div class="cube-face right" data-face="R">
+                                <div class="cube-square" data-pos="0"></div>
+                                <div class="cube-square" data-pos="1"></div>
+                                <div class="cube-square" data-pos="2"></div>
+                                <div class="cube-square" data-pos="3"></div>
+                                <div class="cube-square" data-pos="4"></div>
+                                <div class="cube-square" data-pos="5"></div>
+                                <div class="cube-square" data-pos="6"></div>
+                                <div class="cube-square" data-pos="7"></div>
+                                <div class="cube-square" data-pos="8"></div>
+                            </div>
+                            <!-- Left face -->
+                            <div class="cube-face left" data-face="L">
+                                <div class="cube-square" data-pos="0"></div>
+                                <div class="cube-square" data-pos="1"></div>
+                                <div class="cube-square" data-pos="2"></div>
+                                <div class="cube-square" data-pos="3"></div>
+                                <div class="cube-square" data-pos="4"></div>
+                                <div class="cube-square" data-pos="5"></div>
+                                <div class="cube-square" data-pos="6"></div>
+                                <div class="cube-square" data-pos="7"></div>
+                                <div class="cube-square" data-pos="8"></div>
+                            </div>
+                            <!-- Top face -->
+                            <div class="cube-face top" data-face="U">
+                                <div class="cube-square" data-pos="0"></div>
+                                <div class="cube-square" data-pos="1"></div>
+                                <div class="cube-square" data-pos="2"></div>
+                                <div class="cube-square" data-pos="3"></div>
+                                <div class="cube-square" data-pos="4"></div>
+                                <div class="cube-square" data-pos="5"></div>
+                                <div class="cube-square" data-pos="6"></div>
+                                <div class="cube-square" data-pos="7"></div>
+                                <div class="cube-square" data-pos="8"></div>
+                            </div>
+                            <!-- Bottom face -->
+                            <div class="cube-face bottom" data-face="D">
+                                <div class="cube-square" data-pos="0"></div>
+                                <div class="cube-square" data-pos="1"></div>
+                                <div class="cube-square" data-pos="2"></div>
+                                <div class="cube-square" data-pos="3"></div>
+                                <div class="cube-square" data-pos="4"></div>
+                                <div class="cube-square" data-pos="5"></div>
+                                <div class="cube-square" data-pos="6"></div>
+                                <div class="cube-square" data-pos="7"></div>
+                                <div class="cube-square" data-pos="8"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- 3D Controls -->
+                        <div class="cube-3d-controls">
+                            <button id="rotate-x-plus" class="rotate-btn">↻ X</button>
+                            <button id="rotate-x-minus" class="rotate-btn">↺ X</button>
+                            <button id="rotate-y-plus" class="rotate-btn">↻ Y</button>
+                            <button id="rotate-y-minus" class="rotate-btn">↺ Y</button>
+                            <button id="reset-view" class="rotate-btn">Reset View</button>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Cube Display Section -->
                 <div class="cube-section">
                     <h2>Configure Your Cube</h2>
@@ -168,12 +258,27 @@
                         <div id="solution-text">
                             Configure your cube and click "Solve Cube" to get the solution.
                         </div>
+                        <div class="current-move-highlight" id="current-move">
+                            <span class="move-indicator">Current Move:</span>
+                            <span class="move-notation" id="current-move-text">-</span>
+                            <span class="move-description" id="move-description">Ready to solve</span>
+                        </div>
                     </div>
                     
                     <div class="solution-controls">
                         <button id="prev-step" class="step-btn" disabled>← Previous</button>
+                        <button id="play-pause" class="step-btn play-btn" disabled>
+                            <span class="play-icon">▶</span> Play
+                        </button>
                         <span id="step-info">Ready to solve</span>
                         <button id="next-step" class="step-btn" disabled>Next →</button>
+                        <button id="auto-solve" class="step-btn auto-btn" disabled>🚀 Auto</button>
+                    </div>
+                    
+                    <div class="speed-control">
+                        <label for="animation-speed">Animation Speed:</label>
+                        <input type="range" id="animation-speed" min="200" max="2000" value="800" step="100">
+                        <span id="speed-value">0.8s</span>
                     </div>
                 </div>
             </div>
@@ -189,6 +294,14 @@
                 <li>Click "Solve Cube" to get step-by-step solution</li>
                 <li>Use "Previous" and "Next" to navigate solution steps</li>
             </ol>
+            
+            <h4>Solution Controls</h4>
+            <ul>
+                <li><strong>Next/Previous:</strong> Step through moves manually</li>
+                <li><strong>Play/Pause:</strong> Auto-play solution with animations</li>
+                <li><strong>Auto:</strong> Fast solve without pausing</li>
+                <li><strong>Speed Control:</strong> Adjust animation speed</li>
+            </ul>
             
             <h4>Cube Notation</h4>
             <ul>
